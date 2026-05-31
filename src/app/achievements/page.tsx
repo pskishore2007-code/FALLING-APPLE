@@ -15,6 +15,14 @@ const achievementsList = [
     summary: "Organized a comprehensive, hands-on 2-day teacher training program. Equipped local educators with the practical skills and teaching methodologies needed to successfully run robotics, basic electronics, and interactive DIY science experiments in their school classrooms."
   },
   {
+    title: "Advanced High-Altitude Competition Rocket Prototype",
+    student: "Lohith Kumar R, Kishore PS, Santhosh V, Ganpathy, Gokul Jayandan (Class of 12th), Bhargav (9th Std), Shrijani (7th Std)",
+    modules: "Aerospace & Rocketry Engineering Showcase",
+    awards: "National STEM Rocketry Competition Entry",
+    components: "Custom Integrated Flight Computer, Aerodynamic Stability Simulations, Solid Propellant Engine, Dual-Stage Parachute Ejection Subsystem, 3D-Printed Aerofoil Fins, Gyroscopic Telemetry.",
+    summary: "A multi-disciplinary student team engineered a competitive high-altitude model rocket. Lohith Kumar R designed the custom onboard flight computer. Kishore PS developed aerodynamic stability systems and ran model flight simulations. Santhosh V oversaw the overall mechanical design and structural integrity. Ganpathy engineered propulsion configurations and simulation tests. Bhargav (9th Std) designed the parachute and deployment recovery system. Shrijani (7th Std) implemented safety compliance standards and managed technical communications. Gokul Jayandan assisted with aerodynamics, fabrication, and 3D CAD modeling."
+  },
+  {
     title: "Autonomous Line Follower & Obstacle Avoider",
     student: "Built by Aditya & Ryan (Ages 12)",
     modules: "Robotics Engineering Level 3",
