@@ -1,26 +1,327 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-sans);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-ring: hsl(var(--ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-spin-reverse: spin-reverse 25s linear infinite;
+  --animate-circuits: circuits-glow 4s ease-in-out infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
+
+@keyframes circuits-glow {
+  0%, 100% {
+    opacity: 0.2;
+    stroke-dashoffset: 100;
+  }
+  50% {
+    opacity: 0.6;
+    stroke-dashoffset: 0;
+  }
+}
+
+:root {
+  /* 8px-based grid base sizes (already covered by tailwind spacing classes like p-2, p-4, p-6, p-8, etc.) */
+  
+  /* Light Theme (Apple Clean UI with Blue/Purple Accent) */
+  --background: 210 20% 98%;
+  --foreground: 224 71.4% 4.1%;
+  
+  --primary: 221.2 83.2% 53.3%; /* Premium Blue */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 262.1 83.3% 57.8%; /* Innovation Purple */
+  --secondary-foreground: 210 40% 98%;
+  
+  --accent: 191.6 91.4% 36.5%; /* Science Cyan */
+  --accent-foreground: 210 40% 98%;
+  
+  --muted: 220 14.3% 95.9%;
+  --muted-foreground: 220 8.9% 46.1%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 224 71.4% 4.1%;
+  
+  --border: 220 13% 91%;
+  --ring: 221.2 83.2% 53.3%;
+  
+  --radius: 1rem;
+}
+
+.dark {
+  /* Dark Theme (Futuristic STEM Academy Cyberpunk Neon) */
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  
+  --secondary: 263.4 70% 50.4%;
+  --secondary-foreground: 210 40% 98%;
+  
+  --accent: 191.6 91.4% 36.5%;
+  --accent-foreground: 210 40% 98%;
+  
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  
+  --card: 222.2 84% 6.5%;
+  --card-foreground: 210 40% 98%;
+  
+  --border: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Premium Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(147, 51, 234, 0.08) 100%);
+}
+
+.dark .gradient-bg {
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.15) 0%, rgba(109, 40, 217, 0.15) 100%);
+}
+
+.hero-glow {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 50%, rgba(255, 255, 255, 0) 70%);
+}
+
+.dark .hero-glow {
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.25) 0%, rgba(109, 40, 217, 0.25) 50%, rgba(0, 0, 0, 0) 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: scroll !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+  
+  .animate-float,
+  .animate-float-slow,
+  .animate-pulse-slow,
+  .animate-spin-slow,
+  .animate-spin-reverse,
+  .animate-circuits {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Bento Card Glow styling */
+.bento-card {
+  position: relative;
+  overflow: hidden;
+  background-color: hsl(var(--border) / 0.4);
+  transition: background-color 0.5s ease;
+}
+
+.bento-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    250px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    hsl(var(--primary) / 0.25) 0%,
+    hsl(var(--secondary) / 0.15) 50%,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bento-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(
+    250px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary))),
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bento-card:hover {
+  background-color: transparent;
+}
+
+.bento-card:hover::before,
+.bento-card:hover::after {
+  opacity: 1;
+}
+
+/* Float floating labels style */
+.floating-label-group {
+  position: relative;
+  display: block;
+}
+
+.floating-label-group input,
+.floating-label-group textarea,
+.floating-label-group select {
+  width: 100%;
+  padding: 1.25rem 0.875rem 0.5rem 0.875rem;
+  font-size: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid hsl(var(--border) / 0.8);
+  background-color: hsl(var(--background) / 0.5);
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: hsl(var(--foreground));
+}
+
+.floating-label-group input:focus,
+.floating-label-group textarea:focus,
+.floating-label-group select:focus {
+  border-color: hsl(var(--primary));
+  background-color: hsl(var(--background));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.15);
+}
+
+.floating-label-group label {
+  position: absolute;
+  left: 0.875rem;
+  top: 0.875rem;
+  transform-origin: left top;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  z-index: 10;
+}
+
+/* Floating state triggers */
+.floating-label-group input:focus ~ label,
+.floating-label-group input:not(:placeholder-shown) ~ label,
+.floating-label-group textarea:focus ~ label,
+.floating-label-group textarea:not(:placeholder-shown) ~ label,
+.floating-label-group select:focus ~ label,
+.floating-label-group select:not([value=""]) ~ label,
+.floating-label-group select ~ label {
+  transform: translateY(-0.4rem) scale(0.8);
+  font-weight: 700;
+  color: hsl(var(--primary));
+}
+
+/* Specific reset for select when value is actually set to force floated state */
+.floating-label-group select ~ label {
+  transform: translateY(-0.4rem) scale(0.8);
+  font-weight: 700;
+  color: hsl(var(--primary));
+}
+
