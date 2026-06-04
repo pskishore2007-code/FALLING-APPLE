@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: "Falling Apple STEM Academy | Hands-on STEM & Robotics Learning",
     template: "%s | Falling Apple STEM Academy"
   },
-  description: "An innovation-focused STEM academy in Adyar, Chennai offering kids age 5-18 practical hands-on learning in Robotics, Arduino, Electronics, Coding, AI, and DIY science projects guided by IIT mentors.",
+  description: "An innovation-focused STEM academy in Adyar, Chennai offering kids age 8+ practical hands-on learning in Robotics, Arduino, Electronics, Coding, AI, and DIY science projects guided by IIT mentors.",
   keywords: [
     "STEM education",
     "Robotics classes for kids",

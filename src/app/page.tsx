@@ -56,13 +56,13 @@ const sliderSlides = [
   }
 ];
 
-// The 7 official modules with live images
+// The 6 official modules with live images
 const stemModules = [
   {
     title: "Building 3D models",
     desc: "Build houses, ambulances, cars, and many more using cardboards, ice cream sticks, balloons etc. with glue guns and integrating them with small motors & switches.",
     img: "https://fallingapple.in/wp-content/uploads/2024/11/98166.jpg",
-    age: "Ages 5-10",
+    age: "Ages 8-10",
     duration: "Level 1"
   },
   {
@@ -94,17 +94,10 @@ const stemModules = [
     duration: "Level 3-4"
   },
   {
-    title: "Computer Programming",
-    desc: "Learn simple concepts of programming for games and other computer languages like C++, Python, Scratch, etc.",
-    img: "https://fallingapple.in/wp-content/uploads/2024/11/2150062006.jpg",
-    age: "Ages 8-18",
-    duration: "Level 2-4"
-  },
-  {
     title: "Perform DIY Fun Experiments in Physics",
     desc: "Learn conservation of energy, distance & displacement concepts, sound & vibrations, Newton’s laws, chemical reactions, and lots of other concepts with balloons, rubber bands, water, etc.",
     img: "https://fallingapple.in/wp-content/uploads/2024/11/64821.jpg",
-    age: "Ages 5-15",
+    age: "Ages 8-15",
     duration: "Level 1-3"
   }
 ];
@@ -326,7 +319,7 @@ export default function HomePage() {
                 </h1>
                 
                 <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-lg leading-relaxed font-medium">
-                  Just like magnetic fields pull materials together, our interactive lab in Adyar draws children (ages 5–18) away from screen time and into building physical electronics, coding microcontrollers, and engineering real prototypes.
+                  Just like magnetic fields pull materials together, our interactive lab in Adyar draws children (ages 8+) away from screen time and into building physical electronics, coding microcontrollers, and engineering real prototypes.
                 </p>
               </div>
 
@@ -752,7 +745,7 @@ export default function HomePage() {
             </div>
             
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              Falling Apple STEM Academy is Adyar&apos;s premier innovation hub, where school students (ages 5–18) transition from passive screen time to active, physical creation. Guided by IIT graduates, kids discover the direct physics, electronics, and coding behind real-world tech.
+              Falling Apple STEM Academy is Adyar&apos;s premier innovation hub, where school students (ages 8+) transition from passive screen time to active, physical creation. Guided by IIT graduates, kids discover the direct physics, electronics, and coding behind real-world tech.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">

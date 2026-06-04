@@ -244,9 +244,9 @@ export default function ContactPage() {
                         id="studentAge"
                         type="number"
                         required
-                        min="5"
+                        min="8"
                         max="18"
-                        placeholder="Age (5-18)"
+                        placeholder="Age (8-18)"
                         value={formData.age}
                         onChange={(e) => setFormData({ ...formData, age: e.target.value })}
                         className="px-3.5 py-2.5 text-xs rounded-xl border border-border bg-background/50 focus:ring-2 focus:ring-primary focus:bg-background focus:outline-hidden transition-all duration-200 text-foreground placeholder:text-muted-foreground/60"
@@ -301,8 +301,7 @@ export default function ContactPage() {
                     >
                       <option value="Robotics">Robotics & Motor Systems (Ages 10-18)</option>
                       <option value="Arduino">Arduino Microcontrollers & IoT (Ages 10-18)</option>
-                      <option value="DIY Science">DIY STEM Science Experiments (Ages 5-14)</option>
-                      <option value="Coding">Coding & Python Programming (Ages 8-18)</option>
+                      <option value="DIY Science">DIY STEM Science Experiments (Ages 8-15)</option>
                       <option value="AI Basics">Artificial Intelligence Basics (Ages 12-18)</option>
                       <option value="3D Printing">3D Design & Printing (Ages 10-18)</option>
                     </select>

@@ -4,16 +4,16 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { Cpu, Wrench, Settings2, Laptop, FlaskConical, Binary, Layers, BookOpen, Clock, Award, Sparkles, Compass, ArrowRight, RotateCcw, HelpCircle, CheckCircle2 } from "lucide-react";
+import { Cpu, Wrench, Settings2, FlaskConical, Binary, Layers, BookOpen, Clock, Award, Sparkles, Compass, ArrowRight, RotateCcw, HelpCircle, CheckCircle2 } from "lucide-react";
 import STEMVisuals from "@/components/STEMVisuals";
 
-// Official 7 modules matching fallingapple.in
+// Official 6 modules matching fallingapple.in
 const modulesData = [
   {
     id: "3d-models",
     icon: Wrench,
     title: "Building 3D Models",
-    age: "Ages 5-10",
+    age: "Ages 8-10",
     level: "Beginner",
     duration: "12 Weeks (1 class/week)",
     kits: "DIY Structural & Mechanical Kit",
@@ -105,29 +105,10 @@ const modulesData = [
     color: "text-rose-500 bg-rose-500/10 border-rose-500/20"
   },
   {
-    id: "programming",
-    icon: Laptop,
-    title: "Computer Programming",
-    age: "Ages 8-18",
-    level: "Beginner to Advanced",
-    duration: "12 Weeks (1 class/week)",
-    kits: "Cloud Sandbox Code Workspace",
-    image: "https://fallingapple.in/wp-content/uploads/2024/11/2150062006.jpg",
-    summary: "Transition from visual drag-and-drop block coding into advanced object-oriented script syntax using Python and C++.",
-    syllabus: [
-      "Visual Logic: Coding variables, loops, and conditions in Scratch.",
-      "Introduction to Python: Syntax, basic functions, lists, and loops.",
-      "Object-Oriented Programming: Logic classes, inheritances, and scope.",
-      "Application Builds: Programming text utilities, simple solvers, and 2D games."
-    ],
-    projects: ["Scratch Interactive Game", "Python Password Strength Tool", "Command-Line Calculator", "C++ Text Quiz Engine"],
-    color: "text-cyan-500 bg-cyan-500/10 border-cyan-500/20"
-  },
-  {
     id: "physics-experiments",
     icon: FlaskConical,
     title: "Perform DIY Physics Experiments",
-    age: "Ages 5-15",
+    age: "Ages 8-15",
     level: "Beginner to Intermediate",
     duration: "12 Weeks (1 class/week)",
     kits: "DIY Optics & Mechanics Physics Box",
@@ -147,10 +128,10 @@ const modulesData = [
 // Recommendation logic based on Age, Skill, and Focus inputs
 const getRecommendationId = (age: string, skill: string, focus: string): string => {
   if (focus === "coding") {
-    return "programming";
+    return "arduino-apps";
   }
   if (focus === "electronics") {
-    if (age === "5-8") {
+    if (age === "8-10") {
       return "basic-electronics";
     }
     if (skill === "written") {
@@ -165,7 +146,7 @@ const getRecommendationId = (age: string, skill: string, focus: string): string 
     return "basic-electronics";
   }
   // Default/hands-on focus
-  if (age === "5-8") {
+  if (age === "8-10") {
     return "3d-models";
   }
   if (age === "9-12" && skill === "beginner") {
@@ -553,7 +534,7 @@ export default function ModulesPage() {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {[
-                    { id: "5-8", title: "Ages 5-8", desc: "Early Explorers", details: "Best for tactile crafts, motor basics, and fun science tricks." },
+                    { id: "8-10", title: "Ages 8-10", desc: "Early Explorers", details: "Best for tactile crafts, motor basics, and fun science tricks." },
                     { id: "9-12", title: "Ages 9-12", desc: "Maker Creators", details: "Great for breadboard hardware, block coding, and physics kits." },
                     { id: "13-18", title: "Ages 13-18+", desc: "Teen Engineers", details: "Ready for advanced logic gates, C++/Python, and microcontrollers." }
                   ].map((opt) => (
@@ -653,7 +634,7 @@ export default function ModulesPage() {
                   {[
                     { id: "hands-on", title: "Hands-on Building", desc: "Mechanical & Physics Models", details: "LOVES using their hands, constructing wooden gears, motors, and toys." },
                     { id: "electronics", title: "Electronics & Hardware", desc: "Sensors, Switches, IC Chips", details: "Fascinated by lights, soldering, how computers and buttons operate." },
-                    { id: "coding", title: "Software & App Logic", desc: "Coding games, Python scripting", details: "Excited by logic, programming text, and designing digital programs." }
+                    { id: "coding", title: "Microcontroller Coding", desc: "Arduino & Sensor Logic", details: "Excited by writing code to control real-world lights, motors, and sensors." }
                   ].map((opt) => (
                     <button
                       key={opt.id}
