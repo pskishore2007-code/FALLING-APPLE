@@ -16,19 +16,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="flex flex-col space-y-4">
-            <Link href="/" className="flex items-center space-x-3 group w-fit">
+            <Link href="/" className="flex items-center space-x-3.5 group w-fit">
               <Image
                 src="https://fallingapple.in/wp-content/uploads/2024/11/Falling-Apple-Logo.jpg"
                 alt="Falling Apple STEM Academy Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10 rounded-xl object-cover border border-border/40 shadow-sm"
+                width={56}
+                height={56}
+                className="h-14 w-14 rounded-xl object-cover border border-border/40 shadow-sm transition-transform duration-300 group-hover:scale-105"
               />
               <div className="flex flex-col">
-                <span className="font-bold text-lg leading-tight tracking-tight bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                <span className="font-extrabold text-lg leading-tight tracking-tight bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
                   Falling Apple
                 </span>
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
                   STEM Academy
                 </span>
               </div>
